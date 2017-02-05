@@ -20,11 +20,11 @@ int main(){
       //printf("(%d,%d)\n", x, y);
       if(((x -250) * (x -250)) < (62500 - ((y - 250) * (y - 250)))){
 	char data[25];
-	sprintf(data, "127 %d %d ", (-1 * abs(x - 255)) + 255, (-1 * abs(x - 255)) + 255, (-1 * abs(x - 255)) + 255);
+	sprintf(data, "127 %d %d ", (-1 * abs(x/3 - 255)) + 255, (-1 * abs(y/3 - 255)) + 255, (-1 * abs(x - 255)) + 255);
 	write(fd, data, strlen(data));
       }else{
 	char data[25];
-	sprintf(data, "255 %d 255 ", (-1 * abs(y - 255)) + 255, (-1 * abs(y - 255)) + 255, (-1 * abs(y - 255)) + 255);
+	sprintf(data, "255 %d 255 ", (-1 * abs(y/3 - 255)) + 255, (-1 * abs(y - 255)) + 255, (-1 * abs(y - 255)) + 255);
 	write(fd, data, strlen(data));
       }
     }      
